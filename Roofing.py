@@ -16,7 +16,7 @@ def measurements():
     global perimeter
     perimeter = input("Perimeter length: ")
     hip = input("Hip length: ")
-    ridge = input("Ridge length: ")
+    ridge = input("Ridge length:  ")
 
 
 def measure():
