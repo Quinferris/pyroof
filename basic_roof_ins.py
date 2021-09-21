@@ -27,6 +27,23 @@ def insurance():
     else:
         print("-------")
 
+
+
+def dimensions():
+    # global perimeter
+    # squares = input("SQ's: ")
+    # perimeter = input("Perimeter length: ")
+    # pitch = input("Pitch of roof: ")
+    # hip = input("Hip length: ")
+    # ridge = input("Ridge length:  ")
+    # valley = input("Valley length: ")
+    dict_measurements["Squares"] = input("SQ's: ")
+    dict_measurements["Perimeter"] = input("Perimeter length: ")
+    dict_measurements["Pitch"] = input("Pitch of roof: ")
+    dict_measurements["Hip"] = input("Hip length: ")
+    dict_measurements["Ridge"] = input("Ridge length:  ")
+    dict_measurements["Valley"] = input("Valley length: ")
+
 dict_measurements = {
                      "Squares": "",
                      "Perimeter":"",
@@ -36,19 +53,22 @@ dict_measurements = {
                      "Valley":"",
                                     }
 
-def dimensions():
-    global perimeter
-    squares = input("SQ's: ")
-    perimeter = input("Perimeter length: ")
-    pitch = input("Pitch of roof: ")
-    hip = input("Hip length: ")
-    ridge = input("Ridge length:  ")
-    valley = input("Valley length: ")
-    dict_measurements["Perimeter"] = perimeter
-    dict_measurements["Pitch"] = pitch
-    dict_measurements["Hip"] = hip
-    dict_measurements["Ridge"] = ridge
-    dict_measurements["Valley"] = valley
+
+
+def basic_pay():
+    # crew_pay_low = input("Crew Pay Low: ")
+    # crew_pay_high = input("Crew Pay High: ")
+    # additional_ridge = input("Ridge Pay: ")
+    # additional_starter = input("Starter Shingle Pay: ")
+    # additional_dripedge = input("Drip Edge Pay: ")
+    # dumpster_fee = input("Dumpster Fee: ")
+    dict_crew_pay["High Pitch"] = input("Crew Pay High: ")
+    dict_crew_pay["Low Pitch"] = input("Crew Pay Low: ")
+    dict_crew_pay["Ridge Pay"] = input("Ridge Pay: ")
+    dict_crew_pay["Starter Shingle Pay"] = input("Starter Shingle Pay: ")
+    dict_crew_pay["Drip Edge Pay"] =  input("Drip Edge Pay: ")
+    dict_crew_pay["Dumpster Fee"] = input("Dumpster Fee: ")
+
 
 dict_crew_pay = {
                  "High Pitch":"",
@@ -58,20 +78,6 @@ dict_crew_pay = {
                  "Drip Edge Pay": "",
                  "Dumpster Fee": "",
 }
-
-def basic_pay():
-    crew_pay_low = input("Crew Pay Low: ")
-    crew_pay_high = input("Crew Pay High: ")
-    additional_ridge = input("Ridge Pay: ")
-    additional_starter = input("Starter Shingle Pay: ")
-    additional_dripedge = input("Drip Edge Pay: ")
-    dumpster_fee = input("Dumpster Fee: ")
-    dict_crew_pay["High Pitch"] = crew_pay_high
-    dict_crew_pay["Low Pitch"] = crew_pay_low
-    dict_crew_pay["Ridge Pay"] = additional_ridge
-    dict_crew_pay["Starter Shingle Pay"] = additional_starter
-    dict_crew_pay["Drip Edge Pay"] = additional_dripedge
-    dict_crew_pay["Dumpster Fee"] = dumpster_fee
 
 
 
@@ -97,8 +103,11 @@ dict_supplier_price = {
 
 
 
-### Calculate the crew pay, shingles from supplier 
-
+### Calculate the crew pay, shingles prices from supplier, material cost, overall profit, overall taxes to keep, overall comission to cut, 
+#$# import mail to send email formatted 
+### measure roofs from google earth
+### import google sheets
+### format as csv 
 
 
 
