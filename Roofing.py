@@ -52,15 +52,15 @@ def insurance():
 
 
 
-def retail():
-    paperwork = input("Do you have paperwork: ")
+# def retail():
+#     paperwork = input("Do you have paperwork: ")
 
-    if paperwork == 'yes':
-        sqs = int(input(""))
-    elif paperwork == 'no':
-        measure = input("Do you have measurements: ")
-        if measure.lower() == 'yes':
-            pass
+#     if paperwork == 'yes':
+#         sqs = int(input(""))
+#     elif paperwork == 'no':
+#         measure = input("Do you have measurements: ")
+#         if measure.lower() == 'yes':
+#             pass
 
 
 
