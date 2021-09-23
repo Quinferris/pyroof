@@ -3,40 +3,35 @@ def insurance():
     global collect_deduc
     global deductible
     global sales_tax
+    global sq_ft
     paperwork = input("Do you have paperwork: ")
     if paperwork.lower() == 'yes':
         collect_deduc = input("Are you collecting deductible?")
         if collect_deduc.lower() == "yes":
             deductible = input("Deductible: ")
             ins_price = input("RCV( Replacement Cost Value): ")
+            sales_tax =input("Material Sales Tax")
             total_ins_price = float(ins_price) + int(deductible)
+            dimensions()
             print(total_ins_price)
         elif collect_deduc.lower() == "no":
             deductible = input("Deductible: ")
             ins_price = input("RCV( Replacement Cost Value): ")
             sales_tax =input("Material Sales Tax")
             total_ins_price = float(ins_price) + int(deductible)
+            dimensions()
     elif paperwork.lower() == 'no':
         measure = input("Do you have measurements: ")
         if measure.lower() == 'yes':
             dimensions()
         elif measure.lower() == 'no':
             sq_ft = input("How many sqft is the house?")
-            sleep(3)
-            quit()
     else:
         print("-------")
 
 
 
 def dimensions():
-    # global perimeter
-    # squares = input("SQ's: ")
-    # perimeter = input("Perimeter length: ")
-    # pitch = input("Pitch of roof: ")
-    # hip = input("Hip length: ")
-    # ridge = input("Ridge length:  ")
-    # valley = input("Valley length: ")
     dict_measurements["Squares"] = input("SQ's: ")
     dict_measurements["Perimeter"] = input("Perimeter length: ")
     dict_measurements["Pitch"] = input("Pitch of roof: ")
@@ -56,12 +51,6 @@ dict_measurements = {
 
 
 def basic_pay():
-    # crew_pay_low = input("Crew Pay Low: ")
-    # crew_pay_high = input("Crew Pay High: ")
-    # additional_ridge = input("Ridge Pay: ")
-    # additional_starter = input("Starter Shingle Pay: ")
-    # additional_dripedge = input("Drip Edge Pay: ")
-    # dumpster_fee = input("Dumpster Fee: ")
     dict_crew_pay["High Pitch"] = input("Crew Pay High: ")
     dict_crew_pay["Low Pitch"] = input("Crew Pay Low: ")
     dict_crew_pay["Ridge Pay"] = input("Ridge Pay: ")
@@ -98,7 +87,22 @@ dict_supplier_price = {
 
 }
 
-
+if dict_crew_pay["High Pitch"] != "":
+    a = int(dict_measurements["Squares"]) * int(dict_crew_pay["High Pitch"])
+    b = (int(dict_measurements["Ridge"]) + int(dict_measurements["Hip"])) * float(dict_crew_pay["Ridge Pay"]) or int(dict_crew_pay["Ridge Pay"])
+    c = int(dict_measurements["Perimeter"]) * float(dict_crew_pay["Starter Shingle Pay"]) or int(dict_crew_pay["Starter Shingle Pay"])
+    d = int(dict_measurements["Perimeter"]) * float(dict_crew_pay["Drip Edge Pay"]) or int(dict_crew_pay["Ridge Pay"])
+    e = int(dict_crew_pay["Dumpster Fee"])
+    calc_crew_pay = a + b + c + d + e
+    print("For job ____ you will be the pay crew" + str(calc_crew_pay))
+elif dict_crew_pay["Low Pitch"] != "":
+    a = int(dict_measurements["Squares"]) * int(dict_crew_pay["Low Pitch"])
+    b = (int(dict_measurements["Ridge"]) + int(dict_measurements["Hip"])) * float(dict_crew_pay["Ridge Pay"]) or int(dict_crew_pay["Ridge Pay"])
+    c = int(dict_measurements["Perimeter"]) * float(dict_crew_pay["Starter Shingle Pay"]) or int(dict_crew_pay["Starter Shingle Pay"])
+    d = int(dict_measurements["Perimeter"]) * float(dict_crew_pay["Drip Edge Pay"]) or int(dict_crew_pay["Ridge Pay"])
+    e = int(dict_crew_pay["Dumpster Fee"])
+    calc_crew_pay = a + b + c + d + e
+    print("For job ____ you will be the pay crew" + str(calc_crew_pay))
 
 
 
@@ -108,6 +112,10 @@ dict_supplier_price = {
 ### measure roofs from google earth
 ### import google sheets
 ### format as csv 
+### add in pitch guess and auto calculate price based on > 7/12 high or < 7/12 low
+
+### from import module from another file for easy and clean code
+
 
 
 
