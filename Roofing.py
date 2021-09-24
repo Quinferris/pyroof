@@ -12,6 +12,8 @@ from time import sleep
 # - Decide if you want to export job details to excel
 # - Tax rate
 # - Optional Drip Edge Factored into material per sq or add it """)
+
+
 def measurements():
     global perimeter
     perimeter = input("Perimeter length: ")
