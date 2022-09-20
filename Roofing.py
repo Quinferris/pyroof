@@ -1,17 +1,19 @@
 from time import sleep
-# print("""HELLO
-# THERE ARE A FEW TASK THAT TAKE LESS THAN 2 MINUTES TO COMPLETE:
-# -Define your crew pay for low pitch, usually roofs with no harness
-# -Define your crew pay for high pitch, usually roof with harness
-# -Define your cost per square on BASIC roof system
-# -Define cost for dumpster/trailer
-#     - Pick as many as needed
-#     - Different supplies roofing systems you sell
-#     - GAF Timberline, GAF HDZ, GAF Natural Shadow
-# - Email verification for emailing supplier order list
-# - Decide if you want to export job details to excel
-# - Tax rate
-# - Optional Drip Edge Factored into material per sq or add it """)
+from basic_roof_ins import dimensions
+
+print("""HELLO
+THERE ARE A FEW TASK THAT TAKE LESS THAN 2 MINUTES TO COMPLETE:
+-Define your crew pay for low pitch, usually roofs with no harness
+-Define your crew pay for high pitch, usually roof with harness
+-Define your cost per square on BASIC roof system
+-Define cost for dumpster/trailer
+    - Pick as many as needed
+    - Different supplies roofing systems you sell
+    - GAF Timberline, GAF HDZ, GAF Natural Shadow
+- Email verification for emailing supplier order list
+- Decide if you want to export job details to excel
+- Tax rate
+- Optional Drip Edge Factored into material per sq or add it """)
 
 
 def measurements():
@@ -29,7 +31,7 @@ def insurance():
     global total_ins_price
     global collect_deduc
     global deductible
-    paperwork = input("Do you have paperwork: ")
+    paperwork = input("Do you have pssaperwork: ")
     if paperwork.lower() == 'yes':
         collect_deduc = input("Are you collecting deductible?")
         if collect_deduc.lower() == "yes":
@@ -70,10 +72,11 @@ job_type = input("""
                     Insurance(I) or RETAIL(R)
                     -------------------------
                     What kind of job is this: """)
-if job_type.lower() == 'insurance' or 'i':
-    insurance()
-elif job_type.lower() == 'retail' or 'r':
-    retail()
+
+# if job_type.lower() == 'insurance' or 'i':
+#     insurance()
+# elif job_type.lower() == 'retail' or 'r':
+#     retail()
 #     paperwork = input("Do you have paperwork: ")
 #     if paperwork.lower() == 'yes':
 #         collect_deduc = input("Are you collecting deductible?")
