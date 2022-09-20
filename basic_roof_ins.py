@@ -17,7 +17,7 @@ def insurance():
         elif collect_deduc.lower() == "no":
             deductible = input("Deductible: ")
             ins_price = input("RCV( Replacement Cost Value): ")
-            sales_tax =input("Material Sales Tax")
+            sales_tax =input("Material Sales Tax: ")
             total_ins_price = float(ins_price) + int(deductible)
             dimensions()
     elif paperwork.lower() == 'no':
@@ -26,6 +26,8 @@ def insurance():
             dimensions()
         elif measure.lower() == 'no':
             sq_ft = input("How many sqft is the house?")
+
+    
     else:
         print("-------")
 
