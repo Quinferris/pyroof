@@ -121,7 +121,7 @@ elif dict_crew_pay["Low Pitch"] != "":
 
 
 
-insurance()
+# insurance()
 
 # how_many_sqs = input("How many squares: ")
 # crew_sqs = input("High or low pitch: ")
